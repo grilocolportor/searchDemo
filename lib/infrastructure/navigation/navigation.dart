@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../presentation/resultPage/result_page_view.dart';
 import '../../presentation/screens.dart';
-import 'bindings/controllers/controllers_bindings.dart';
+import '../bindings/controllers/home.controller.binding.dart';
 import 'routes.dart';
 
 

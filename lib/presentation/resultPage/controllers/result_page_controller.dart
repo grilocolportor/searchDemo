@@ -16,5 +16,8 @@ class ResultPageController extends GetxController {
 
   @override
   void onClose() {}
+
+  
+
   void increment() => count.value++;
 }
