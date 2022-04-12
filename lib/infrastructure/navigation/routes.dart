@@ -5,5 +5,10 @@ class Routes {
     return HOME;
   }
 
+  static Future<String> get resultPage async {
+    return RESULT_PAGE;
+  }
+
   static const HOME = '/home';
+  static const RESULT_PAGE = '/resultPage';
 }
