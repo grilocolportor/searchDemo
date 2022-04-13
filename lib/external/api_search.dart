@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 
 class ApiSearch {
-  static Future searchWikipedia() async {
+  static Future<Response> searchWikipedia({required String pathApi}) async {
     var dio = Dio();
-    final response = await dio
-        .get('api.php?action=query&list=search&srwhat=text&srsearch=meaning');
+    Response response = await dio
+        .get(pathApi);
     return response;
   }
 }
