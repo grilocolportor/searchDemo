@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-import '../../../../presentation/resultPage/controllers/result_page_controller.dart';
+import '../../../presentation/result_page/controllers/result_page_controller.dart';
+
 
 class ResultPageBinding extends Bindings {
   @override

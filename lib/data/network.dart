@@ -1,0 +1,1 @@
+export 'package:search_demo/data/home/home_network.dart';
