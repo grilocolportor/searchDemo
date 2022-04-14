@@ -1,10 +1,9 @@
 // ignore_for_file: invalid_use_of_protected_member
 
 import 'package:flutter/material.dart';
-
+import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:search_demo/infrastructure/navigation/routes.dart';
-
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -56,11 +55,10 @@ class HomeScreen extends GetView<HomeController> {
                         return ListTile(
                           title: Text(_homeController.list.value[i].title),
                           subtitle:
-                              Text(_homeController.list.value[i].desc),
+                              Html(data: _homeController.list.value[i].desc),
                           onTap: () {
                             Get.toNamed(   Routes.RESULT_PAGE,   arguments: [{
-                              'title': _homeController.list.value[i].title, 
-                              'desc':_homeController.list.value[i].desc
+                              'data': _homeController.list.value[i], 
                             }]);
                           },
                         );
