@@ -12,8 +12,6 @@ class ResultPageView extends GetView<ResultPageController> {
 
   @override
   Widget build(BuildContext context) {
-    var d = arguments[0]['data'];
-    print('---------------------------------------------$d');
     return Scaffold(
       appBar: AppBar(
         title: Text('ResultPageView'),
