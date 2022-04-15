@@ -1,15 +1,20 @@
-import 'package:either_dart/src/either.dart';
+import 'package:either_dart/either.dart';
+import 'package:search_demo/external/search_api_interface.dart';
 import 'dart:convert';
 
 import '../../domain/result.dart';
-import '../../external/api_search.dart';
 import '../../settings/constants.dart' as configs;
 
 class HomeNetwork {
-  static Future<Either<String, List<Result>>> searchWipedia(
+  final IRepository repository;
+
+  HomeNetwork(this.repository);
+
+  Future<Either<String, List<Result>>> searchWipedia(
       {required String keyword}) async {
     String url = configs.urlWikepedia + keyword + '&utf8=&format=json';
-    final response = await ApiSearch.search(pathApi: url);
+
+    final response = await repository.fetch(pathApi: url);
 
     if (response.statusCode == 200) {
       List<Result> listResult = [];

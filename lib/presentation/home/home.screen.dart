@@ -39,11 +39,11 @@ class HomeScreen extends GetView<HomeController> {
             ),
           ),
           Obx(() => Visibility(
-            visible: _homeController.stopProgress.value,
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          )),
+                visible: _homeController.stopProgress.value,
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              )),
           Obx(
             () => Expanded(
                 child: ListView.builder(
@@ -57,9 +57,11 @@ class HomeScreen extends GetView<HomeController> {
                           subtitle:
                               Html(data: _homeController.list.value[i].desc),
                           onTap: () {
-                            Get.toNamed(   Routes.RESULT_PAGE,   arguments: [{
-                              'data': _homeController.list.value[i], 
-                            }]);
+                            Get.toNamed(Routes.RESULT_PAGE, arguments: [
+                              {
+                                'data': _homeController.list.value[i],
+                              }
+                            ]);
                           },
                         );
                       }

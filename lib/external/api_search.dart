@@ -1,11 +1,15 @@
 import 'package:dio/dio.dart';
+import 'package:search_demo/external/search_api_interface.dart';
 
-class ApiSearch {
-  
-  static Future<Response> search({required String pathApi}) async {
+class ApiSearch implements IRepository{
+
+  @override
+  Future<Response> fetch({required String pathApi}) async {
     var dio = Dio();
    
-    Response response = await dio.post(pathApi, );
+    var response = await dio.post(pathApi);
     return response;
   }
+ 
+  
 }
